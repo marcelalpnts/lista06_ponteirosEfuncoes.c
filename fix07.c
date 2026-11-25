@@ -4,34 +4,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-void popularMatriz(int *m, int n){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            *(m + i*n + j) = rand() % 10;
-        }
-    }
-}
+void popularMatriz(int *m, int n);
 
-void imprimirMatriz(int *m, int n){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            printf("%d ",*(m + i*n + j));
-        }
-        printf("\n");
-    }
-}
+void imprimirMatriz(int *m, int n);
 
-void binarizarMatriz(int *m, int *s, int n, int t){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if (*(m + i*n + j) > t){
-                *(s+ i*n+j) = 1;
-            } else {
-                *(s + i*n + j) = 0;
-            }
-        }
-    }
-}
+void binarizarMatriz(int *m, int *s, int n, int t);
 
 int main (int argc, char *argv[]){
 
@@ -77,4 +54,33 @@ int main (int argc, char *argv[]){
     free(M);
     free(S);
     return 0;
+}
+
+void popularMatriz(int *m, int n){
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            *(m + i*n + j) = rand() % 10;
+        }
+    }
+}
+
+void imprimirMatriz(int *m, int n){
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            printf("%d ",*(m + i*n + j));
+        }
+        printf("\n");
+    }
+}
+
+void binarizarMatriz(int *m, int *s, int n, int t){
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if (*(m + i*n + j) > t){
+                *(s+ i*n+j) = 1;
+            } else {
+                *(s + i*n + j) = 0;
+            }
+        }
+    }
 }
